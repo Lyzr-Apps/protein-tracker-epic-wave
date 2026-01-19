@@ -24,7 +24,8 @@ import {
   Settings,
   ChevronRight,
   Activity,
-  Lightbulb
+  Lightbulb,
+  Mail
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -43,6 +44,7 @@ interface MealItem {
 }
 
 interface MealPlanResult {
+  user_email: string
   daily_protein_target: number
   user_weight: number
   meals: MealItem[]
@@ -239,18 +241,20 @@ function ProfileSidebar({
 }: {
   isOpen: boolean
   onClose: () => void
-  userProfile: { height: string; weight: number; goal: string }
+  userProfile: { height: string; weight: number; goal: string; email: string }
   onUpdate: (profile: any) => void
 }) {
   const [height, setHeight] = useState(userProfile.height)
   const [weight, setWeight] = useState(userProfile.weight.toString())
   const [goal, setGoal] = useState(userProfile.goal)
+  const [email, setEmail] = useState(userProfile.email)
 
   const handleSave = () => {
     onUpdate({
       height,
       weight: parseInt(weight),
-      goal
+      goal,
+      email
     })
     onClose()
   }
@@ -274,6 +278,19 @@ function ProfileSidebar({
         </div>
 
         <div className="space-y-6">
+          <div>
+            <Label htmlFor="email" className="text-gray-300">Email Address</Label>
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-gray-800 border-gray-700 text-white mt-2"
+              placeholder="your.email@gmail.com"
+            />
+            <p className="text-xs text-gray-500 mt-1">Used for Google Calendar event creation</p>
+          </div>
+
           <div>
             <Label htmlFor="height" className="text-gray-300">Height</Label>
             <Input
@@ -331,7 +348,8 @@ export default function Home() {
   const [userProfile, setUserProfile] = useState({
     height: "5'7\"",
     weight: 67,
-    goal: "Shred + Muscle gain"
+    goal: "Shred + Muscle gain",
+    email: ""
   })
 
   // Meal time preferences
@@ -344,16 +362,17 @@ export default function Home() {
   })
 
   const handleGeneratePlan = async () => {
+    // Email validation
+    if (!userProfile.email || !userProfile.email.includes('@')) {
+      setError('Please enter a valid email address in your profile to create calendar events')
+      return
+    }
+
     setLoading(true)
     setError(null)
 
     try {
-      const message = `Generate a personalized meal plan for:
-Weight: ${userProfile.weight}kg
-Goal: ${userProfile.goal}
-Preferred meal times: ${mealTimes.breakfast}, ${mealTimes.midMorning}, ${mealTimes.lunch}, ${mealTimes.evening}, ${mealTimes.dinner}
-
-Please create a high-protein Indian non-veg meal plan with easy-to-prep meals and add calendar reminders.`
+      const message = `Generate today's meal plan for a ${userProfile.weight}kg male focused on ${userProfile.goal}. Email: ${userProfile.email}. Preferred meal times: Breakfast ${mealTimes.breakfast}, Mid-morning ${mealTimes.midMorning}, Lunch ${mealTimes.lunch}, Evening ${mealTimes.evening}, Dinner ${mealTimes.dinner}. I prefer easy-prep Indian non-veg options like eggs, chicken, paneer, fish. Minimal cooking skills.`
 
       const result = await callAIAgent(message, AGENT_ID)
 
@@ -412,6 +431,12 @@ Please create a high-protein Indian non-veg meal plan with easy-to-prep meals an
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-400">Email</span>
+                    <span className="text-white font-medium">
+                      {userProfile.email || 'Not set'}
+                    </span>
+                  </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-400">Height</span>
                     <span className="text-white font-medium">{userProfile.height}</span>
@@ -489,6 +514,26 @@ Please create a high-protein Indian non-veg meal plan with easy-to-prep meals an
               <Card className="bg-red-500/10 border-red-500/30">
                 <CardContent className="pt-6">
                   <p className="text-red-400">{error}</p>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Email Confirmation Banner */}
+            {response?.result?.user_email && (
+              <Card className="bg-green-500/10 border-green-500/30">
+                <CardContent className="pt-6">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-green-500/20">
+                      <Mail className="w-5 h-5 text-green-400" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-green-400">Calendar Events Created</p>
+                      <p className="text-sm text-gray-300 mt-1">
+                        All meal reminders have been added to: <span className="font-semibold text-white">{response.result.user_email}</span>
+                      </p>
+                    </div>
+                    <Check className="w-6 h-6 text-green-400 ml-auto" />
+                  </div>
                 </CardContent>
               </Card>
             )}

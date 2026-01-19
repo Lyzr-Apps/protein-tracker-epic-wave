@@ -6,6 +6,7 @@
   "response_schema": {
     "status": "string",
     "result": {
+      "user_email": "string",
       "daily_protein_target": "number",
       "user_weight": "number",
       "meals": [
@@ -32,152 +33,156 @@
   "example_response": {
     "status": "success",
     "result": {
+      "user_email": "testuser@gmail.com",
       "daily_protein_target": 134,
       "user_weight": 67,
       "meals": [
         {
           "meal_number": 1,
-          "meal_name": "Breakfast - Boiled Eggs & Milk",
-          "timing": "8:00 AM",
+          "meal_name": "Breakfast - Masala Omelette & Milk",
+          "timing": "08:00 AM",
           "food_items": [
-            "4 boiled eggs",
+            "3 eggs (omelette with onions, tomatoes, green chilies)",
             "1 glass milk (250ml)"
           ],
-          "protein_content": 35,
-          "prep_instructions": "Boil 4 eggs for 8-10 minutes. Serve warm eggs with a glass of milk. Minimal prep required.",
+          "protein_content": 30,
+          "prep_instructions": "Beat 3 eggs with chopped onions, tomatoes, green chilies and a pinch of salt. Cook on a non-stick pan for 5 minutes. Serve with a glass of milk.",
           "calendar_event_created": true
         },
         {
           "meal_number": 2,
-          "meal_name": "Protein Shake",
+          "meal_name": "Mid-morning Snack - Greek Yogurt with Roasted Chana",
           "timing": "11:00 AM",
           "food_items": [
-            "1 scoop whey protein (with water or milk)"
+            "1 cup plain Greek yogurt (200g)",
+            "Roasted chana (30g)"
           ],
-          "protein_content": 25,
-          "prep_instructions": "Add 1 scoop whey protein to water or milk, shake well, and drink immediately. Super quick prep.",
+          "protein_content": 23,
+          "prep_instructions": "Take 1 cup Greek yogurt and top with roasted chana. Mix and enjoy.",
           "calendar_event_created": true
         },
         {
           "meal_number": 3,
-          "meal_name": "Grilled Chicken Breast + Dal",
-          "timing": "1:00 PM",
+          "meal_name": "Lunch - Grilled Chicken Breast & Mixed Veg",
+          "timing": "01:00 PM",
           "food_items": [
-            "150g grilled chicken breast",
-            "1 cup cooked dal"
+            "150g chicken breast (grilled or pan-cooked)",
+            "Steamed mixed vegetables (carrot, beans, peas) 1 cup"
           ],
-          "protein_content": 40,
-          "prep_instructions": "Grill 150g chicken breast with salt/spices in a pan. Cook 1 cup dal in a pressure cooker. Quick and easy meal.",
+          "protein_content": 35,
+          "prep_instructions": "Marinate chicken breast with salt, pepper, turmeric, and chili powder. Grill or cook in a pan with a little oil for 7-8 minutes each side. Steam 1 cup mixed vegetables.",
           "calendar_event_created": true
         },
         {
           "meal_number": 4,
-          "meal_name": "Paneer Bhurji",
-          "timing": "5:00 PM",
+          "meal_name": "Evening Snack - Paneer Tikka",
+          "timing": "05:00 PM",
           "food_items": [
-            "100g paneer",
-            "onion, tomato, spices"
+            "100g paneer cubes",
+            "Curd (2 tbsp) with tikka masala/spices"
           ],
-          "protein_content": 20,
-          "prep_instructions": "Scramble 100g paneer with chopped onions & tomatoes, sprinkle basic spices, and cook on a nonstick pan. Ready in 10 min.",
+          "protein_content": 18,
+          "prep_instructions": "Marinate paneer cubes in curd with salt, tikka masala/spices for 5 min. Pan-roast or grill on skewers for 8-10 min.",
           "calendar_event_created": true
         },
         {
           "meal_number": 5,
-          "meal_name": "Fish Curry (Lean)",
-          "timing": "8:00 PM",
+          "meal_name": "Dinner - Fish Fry & Green Salad",
+          "timing": "08:00 PM",
           "food_items": [
-            "120g roh or surmai fish",
-            "basic curry spices, minimal oil"
+            "120g boneless fish (Rohu, Basa, or Tilapia)",
+            "Green salad (cucumber, onion, tomato, lemon)"
           ],
-          "protein_content": 25,
-          "prep_instructions": "Cook 120g fish with minimal oil, water, and curry spices. Use pressure cooker or shallow pan. Serve hot with optional veggies.",
+          "protein_content": 28,
+          "prep_instructions": "Marinate fish with turmeric, chili powder, salt and lemon. Pan-fry for 4-5 min each side. Serve with fresh salad.",
           "calendar_event_created": true
         }
       ],
-      "total_protein_planned": 145,
-      "summary": "High-protein easy Indian non-veg meal plan for shredding and muscle gain. You will consume about 145g protein split across 5 simple meals, meeting and slightly exceeding your target for optimal muscle retention. All meals are scheduled with calendar reminders and require minimal cooking skills."
+      "total_protein_planned": 134,
+      "summary": "Your easy-prep Indian non-veg meal plan for shredding and muscle gain hits your daily protein goal of 134g. Each meal is bachelor-friendly, quick to cook, and rich in high-quality protein. Calendar reminders have been scheduled for each meal to keep you on track."
     },
     "metadata": {
       "agent_name": "Nutrition Reminder Agent",
-      "timestamp": "2026-01-20T04:10:54+05:30"
+      "timestamp": "2024-06-21T00:00:00+05:30"
     }
   },
   "is_actual_tested": true,
-  "test_timestamp": "2026-01-19T22:41:20.915029",
+  "test_timestamp": "2026-01-19T22:55:06.865479",
   "test_message_used": "Provide a sample response",
   "actual_test_response": {
     "status": "success",
     "result": {
+      "user_email": "testuser@gmail.com",
       "daily_protein_target": 134,
       "user_weight": 67,
       "meals": [
         {
           "meal_number": 1,
-          "meal_name": "Breakfast - Boiled Eggs & Milk",
-          "timing": "8:00 AM",
+          "meal_name": "Breakfast - Masala Omelette & Milk",
+          "timing": "08:00 AM",
           "food_items": [
-            "4 boiled eggs",
+            "3 eggs (omelette with onions, tomatoes, green chilies)",
             "1 glass milk (250ml)"
           ],
-          "protein_content": 35,
-          "prep_instructions": "Boil 4 eggs for 8-10 minutes. Serve warm eggs with a glass of milk. Minimal prep required.",
+          "protein_content": 30,
+          "prep_instructions": "Beat 3 eggs with chopped onions, tomatoes, green chilies and a pinch of salt. Cook on a non-stick pan for 5 minutes. Serve with a glass of milk.",
           "calendar_event_created": true
         },
         {
           "meal_number": 2,
-          "meal_name": "Protein Shake",
+          "meal_name": "Mid-morning Snack - Greek Yogurt with Roasted Chana",
           "timing": "11:00 AM",
           "food_items": [
-            "1 scoop whey protein (with water or milk)"
+            "1 cup plain Greek yogurt (200g)",
+            "Roasted chana (30g)"
           ],
-          "protein_content": 25,
-          "prep_instructions": "Add 1 scoop whey protein to water or milk, shake well, and drink immediately. Super quick prep.",
+          "protein_content": 23,
+          "prep_instructions": "Take 1 cup Greek yogurt and top with roasted chana. Mix and enjoy.",
           "calendar_event_created": true
         },
         {
           "meal_number": 3,
-          "meal_name": "Grilled Chicken Breast + Dal",
-          "timing": "1:00 PM",
+          "meal_name": "Lunch - Grilled Chicken Breast & Mixed Veg",
+          "timing": "01:00 PM",
           "food_items": [
-            "150g grilled chicken breast",
-            "1 cup cooked dal"
+            "150g chicken breast (grilled or pan-cooked)",
+            "Steamed mixed vegetables (carrot, beans, peas) 1 cup"
           ],
-          "protein_content": 40,
-          "prep_instructions": "Grill 150g chicken breast with salt/spices in a pan. Cook 1 cup dal in a pressure cooker. Quick and easy meal.",
+          "protein_content": 35,
+          "prep_instructions": "Marinate chicken breast with salt, pepper, turmeric, and chili powder. Grill or cook in a pan with a little oil for 7-8 minutes each side. Steam 1 cup mixed vegetables.",
           "calendar_event_created": true
         },
         {
           "meal_number": 4,
-          "meal_name": "Paneer Bhurji",
-          "timing": "5:00 PM",
+          "meal_name": "Evening Snack - Paneer Tikka",
+          "timing": "05:00 PM",
           "food_items": [
-            "100g paneer",
-            "onion, tomato, spices"
+            "100g paneer cubes",
+            "Curd (2 tbsp) with tikka masala/spices"
           ],
-          "protein_content": 20,
-          "prep_instructions": "Scramble 100g paneer with chopped onions & tomatoes, sprinkle basic spices, and cook on a nonstick pan. Ready in 10 min.",
+          "protein_content": 18,
+          "prep_instructions": "Marinate paneer cubes in curd with salt, tikka masala/spices for 5 min. Pan-roast or grill on skewers for 8-10 min.",
           "calendar_event_created": true
         },
         {
           "meal_number": 5,
-          "meal_name": "Fish Curry (Lean)",
-          "timing": "8:00 PM",
+          "meal_name": "Dinner - Fish Fry & Green Salad",
+          "timing": "08:00 PM",
           "food_items": [
-            "120g roh or surmai fish",
-            "basic curry spices, minimal oil"
+            "120g boneless fish (Rohu, Basa, or Tilapia)",
+            "Green salad (cucumber, onion, tomato, lemon)"
           ],
-          "protein_content": 25,
-          "prep_instructions": "Cook 120g fish with minimal oil, water, and curry spices. Use pressure cooker or shallow pan. Serve hot with optional veggies.",
+          "protein_content": 28,
+          "prep_instructions": "Marinate fish with turmeric, chili powder, salt and lemon. Pan-fry for 4-5 min each side. Serve with fresh salad.",
           "calendar_event_created": true
         }
       ],
-      "total_protein_planned": 145,
-      "summary": "High-protein easy Indian non-veg meal plan for shredding and muscle gain. You will consume about 145g protein split across 5 simple meals, meeting and slightly exceeding your target for optimal muscle retention. All meals are scheduled with calendar reminders and require minimal cooking skills."
+      "total_protein_planned": 134,
+      "summary": "Your easy-prep Indian non-veg meal plan for shredding and muscle gain hits your daily protein goal of 134g. Each meal is bachelor-friendly, quick to cook, and rich in high-quality protein. Calendar reminders have been scheduled for each meal to keep you on track."
     },
     "metadata": {
       "agent_name": "Nutrition Reminder Agent",
-      "timestamp": "2026-01-20T04:10:54+05:30"
+      "timestamp": "2024-06-21T00:00:00+05:30"
     }
   },
   "test_passed": true

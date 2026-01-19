@@ -1,0 +1,60 @@
+{
+  "workflow_name": "FitFuel Daily - Nutrition Reminder Application",
+  "workflow_type": "single_agent",
+  "created_at": "2026-01-19",
+  "agents": [
+    {
+      "agent_id": "696eb2abb50537828e0afde7",
+      "agent_name": "Nutrition Reminder Agent",
+      "agent_type": "Single",
+      "description": "Calculates daily protein requirements based on user profile (67kg, shredding + muscle gain), generates personalized meal reminders with easy-prep Indian non-veg options (eggs, chicken, fish, dairy), and creates Google Calendar events with meal details and protein content for each reminder",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "temperature": 0.5,
+      "top_p": 0.95,
+      "tools": [
+        {
+          "tool_name": "googlecalendar",
+          "tool_source": "composio",
+          "actions": ["GOOGLECALENDAR_CREATE_EVENT", "GOOGLECALENDAR_GET_CURRENT_DATE_TIME"]
+        }
+      ],
+      "trigger": "Generate Today's Meal Plan button on Dashboard",
+      "response_schema_file": "response_schemas/nutrition_reminder_agent_response.json"
+    }
+  ],
+  "workflow_structure": {
+    "nodes": [
+      {
+        "id": "user_input",
+        "type": "Input",
+        "label": "User Profile Data",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "nutrition_reminder_agent",
+        "type": "Agent",
+        "label": "Nutrition Reminder Agent",
+        "nodeCategory": "agent",
+        "agent_id": "696eb2abb50537828e0afde7"
+      },
+      {
+        "id": "meal_plan_output",
+        "type": "Output",
+        "label": "Meal Plan & Calendar Events",
+        "nodeCategory": "end"
+      }
+    ],
+    "edges": [
+      {
+        "source": "user_input",
+        "target": "nutrition_reminder_agent"
+      },
+      {
+        "source": "nutrition_reminder_agent",
+        "target": "meal_plan_output"
+      }
+    ]
+  },
+  "status": "complete"
+}

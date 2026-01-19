@@ -1,0 +1,84 @@
+{
+  "agent_name": "Nutrition Reminder Agent",
+  "agent_id": "696eb2abb50537828e0afde7",
+  "test_message": "Generate today's meal plan for a 67kg male focused on shredding fat and gaining muscle. Preferred meal times: Breakfast 8AM, Mid-morning snack 11AM, Lunch 1PM, Evening snack 5PM, Dinner 8PM. I prefer easy-prep Indian non-veg options like eggs, chicken, paneer, fish. Minimal cooking skills.",
+  "expected_purpose": "recommendation",
+  "timestamp": "2026-01-19T22:41:20.911026",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "daily_protein_target": 134,
+      "user_weight": 67,
+      "meals": [
+        {
+          "meal_number": 1,
+          "meal_name": "Breakfast - Boiled Eggs & Milk",
+          "timing": "8:00 AM",
+          "food_items": [
+            "4 boiled eggs",
+            "1 glass milk (250ml)"
+          ],
+          "protein_content": 35,
+          "prep_instructions": "Boil 4 eggs for 8-10 minutes. Serve warm eggs with a glass of milk. Minimal prep required.",
+          "calendar_event_created": true
+        },
+        {
+          "meal_number": 2,
+          "meal_name": "Protein Shake",
+          "timing": "11:00 AM",
+          "food_items": [
+            "1 scoop whey protein (with water or milk)"
+          ],
+          "protein_content": 25,
+          "prep_instructions": "Add 1 scoop whey protein to water or milk, shake well, and drink immediately. Super quick prep.",
+          "calendar_event_created": true
+        },
+        {
+          "meal_number": 3,
+          "meal_name": "Grilled Chicken Breast + Dal",
+          "timing": "1:00 PM",
+          "food_items": [
+            "150g grilled chicken breast",
+            "1 cup cooked dal"
+          ],
+          "protein_content": 40,
+          "prep_instructions": "Grill 150g chicken breast with salt/spices in a pan. Cook 1 cup dal in a pressure cooker. Quick and easy meal.",
+          "calendar_event_created": true
+        },
+        {
+          "meal_number": 4,
+          "meal_name": "Paneer Bhurji",
+          "timing": "5:00 PM",
+          "food_items": [
+            "100g paneer",
+            "onion, tomato, spices"
+          ],
+          "protein_content": 20,
+          "prep_instructions": "Scramble 100g paneer with chopped onions & tomatoes, sprinkle basic spices, and cook on a nonstick pan. Ready in 10 min.",
+          "calendar_event_created": true
+        },
+        {
+          "meal_number": 5,
+          "meal_name": "Fish Curry (Lean)",
+          "timing": "8:00 PM",
+          "food_items": [
+            "120g roh or surmai fish",
+            "basic curry spices, minimal oil"
+          ],
+          "protein_content": 25,
+          "prep_instructions": "Cook 120g fish with minimal oil, water, and curry spices. Use pressure cooker or shallow pan. Serve hot with optional veggies.",
+          "calendar_event_created": true
+        }
+      ],
+      "total_protein_planned": 145,
+      "summary": "High-protein easy Indian non-veg meal plan for shredding and muscle gain. You will consume about 145g protein split across 5 simple meals, meeting and slightly exceeding your target for optimal muscle retention. All meals are scheduled with calendar reminders and require minimal cooking skills."
+    },
+    "metadata": {
+      "agent_name": "Nutrition Reminder Agent",
+      "timestamp": "2026-01-20T04:10:54+05:30"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"daily_protein_target\": 134,\n    \"user_weight\": 67,\n    \"meals\": [\n      {\n        \"meal_number\": 1,\n        \"meal_name\": \"Breakfast - Boiled Eggs & Milk\",\n        \"timing\": \"8:00 AM\",\n        \"food_items\": [\"4 boiled eggs\", \"1 glass milk (250ml)\"],\n        \"protein_content\": 35,\n        \"prep_instructions\": \"Boil 4 eggs for 8-10 minutes. Serve warm eggs with a glass of milk. Minimal prep required.\",\n        \"calendar_event_created\": true\n      },\n      {\n        \"meal_number\": 2,\n        \"meal_name\": \"Protein Shake\",\n        \"timing\": \"11:00 AM\",\n        \"food_items\": [\"1 scoop whey protein (with water or milk)\"],\n        \"protein_content\": 25,\n        \"prep_instructions\": \"Add 1 scoop whey protein to water or milk, shake well, and drink immediately. Super quick prep.\",\n        \"calendar_event_created\": true\n      },\n      {\n        \"meal_number\": 3,\n        \"meal_name\": \"Grilled Chicken Breast + Dal\",\n        \"timing\": \"1:00 PM\",\n        \"food_items\": [\"150g grilled chicken breast\", \"1 cup cooked dal\"],\n        \"protein_content\": 40,\n        \"prep_instructions\": \"Grill 150g chicken breast with salt/spices in a pan. Cook 1 cup dal in a pressure cooker. Quick and easy meal.\",\n        \"calendar_event_created\": true\n      },\n      {\n        \"meal_number\": 4,\n        \"meal_name\": \"Paneer Bhurji\",\n        \"timing\": \"5:00 PM\",\n        \"food_items\": [\"100g paneer\", \"onion, tomato, spices\"],\n        \"protein_content\": 20,\n        \"prep_instructions\": \"Scramble 100g paneer with chopped onions & tomatoes, sprinkle basic spices, and cook on a nonstick pan. Ready in 10 min.\",\n        \"calendar_event_created\": true\n      },\n      {\n        \"meal_number\": 5,\n        \"meal_name\": \"Fish Curry (Lean)\",\n        \"timing\": \"8:00 PM\",\n        \"food_items\": [\"120g roh or surmai fish\", \"basic curry spices, minimal oil\"],\n        \"protein_content\": 25,\n        \"prep_instructions\": \"Cook 120g fish with minimal oil, water, and curry spices. Use pressure cooker or shallow pan. Serve hot with optional veggies.\",\n        \"calendar_event_created\": true\n      }\n    ],\n    \"total_protein_planned\": 145,\n    \"summary\": \"High-protein easy Indian non-veg meal plan for shredding and muscle gain. You will consume about 145g protein split across 5 simple meals, meeting and slightly exceeding your target for optimal muscle retention. All meals are scheduled with calendar reminders and require minimal cooking skills.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Nutrition Reminder Agent\",\n    \"timestamp\": \"2026-01-20T04:10:54+05:30\"\n  }\n}"
+}
